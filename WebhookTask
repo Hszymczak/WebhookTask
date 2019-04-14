@@ -1,0 +1,17 @@
+
+
+void setup() {
+
+pinMode(A0, INPUT);
+
+Serial.begin(9600);
+}
+
+void loop() {
+String temp;
+temp = analogRead(A0);
+Serial.println(temp);
+Particle.publish("temp", temp, PRIVATE);
+delay(3000);
+
+}
